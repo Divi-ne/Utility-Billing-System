@@ -1,0 +1,53 @@
+# Copy this file to application.properties and fill in your local values.
+
+spring.application.name=utility-billing-system
+server.port=8081
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/utility_billing_db
+spring.datasource.username=postgres
+spring.datasource.password=divine
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+spring.jpa.hibernate.ddl-auto=validate
+spring.jpa.show-sql=false
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.open-in-view=false
+
+spring.flyway.enabled=true
+spring.flyway.locations=classpath:db/migration
+spring.flyway.baseline-on-migrate=true
+
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=your-email@gmail.com
+spring.mail.password=your-gmail-app-password
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+
+app.mail.from=your-email@gmail.com
+app.mail.from-name=Utility Billing System
+
+app.otp.enabled=true
+app.otp.length=6
+app.otp.expiration-minutes=10
+app.otp.log-to-console=true
+# Use "console" for local dev (OTP returned in API response, no Gmail needed). Use "email" in production.
+app.otp.delivery-mode=console
+
+app.jwt.secret=dGhpc2lzYXZlcnlsb25nc2VjcmV0a2V5Zm9yand0dG9rZW5nZW5lcmF0aW9uMTIzNDU2Nzg5MA==
+app.jwt.expiration-ms=86400000
+
+app.seed.admin.enabled=true
+app.seed.admin.full-name=System Administrator
+app.seed.admin.email=admin@utility.com
+app.seed.admin.phone-number=0788000001
+app.seed.admin.password=Admin@123
+
+springdoc.api-docs.path=/api-docs
+springdoc.swagger-ui.path=/swagger-ui.html
+springdoc.swagger-ui.operationsSorter=method
+
+logging.level.com.utility.utility_billing_system=INFO
+logging.level.org.springframework.security=WARN
